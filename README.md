@@ -1,6 +1,6 @@
 # HolyC Compiler
 
-A compiler for Terry A. Davis' HolyC, outside of TempleOS.
+A compiler for HolyC, outside of TempleOS.
 
 ## Disclaimer
 
