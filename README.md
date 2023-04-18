@@ -2,6 +2,8 @@
 
 A compiler for HolyC, outside of TempleOS.
 
+[![Build](https://github.com/joshjkk/HolyC-Compiler/actions/workflows/Build.yml/badge.svg?branch=master)](https://github.com/joshjkk/HolyC-Compiler/actions/workflows/Build.yml)
+
 ## Disclaimer
 
 This project is still in development, and is not intended to be used at its current state. Please don't use this at the moment.
