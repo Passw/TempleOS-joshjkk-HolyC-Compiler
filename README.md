@@ -22,8 +22,6 @@ After installing and cloning, run the following command:
 cargo run <file_to_compile>
 ```
 
-> As of now, the file is not compiled, only lexed and parsed. Compilation will be implemented in upcoming updates.
-
 ## License
 
 HolyC Compiler is under an Apache 2.0 license.

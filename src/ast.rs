@@ -1,3 +1,5 @@
+#[derive(Debug)]
+#[derive(PartialEq)]
 pub enum ASTType {
     Compound,
     Function,
@@ -9,6 +11,7 @@ pub enum ASTType {
     //Statement
 }
 
+#[derive(Debug)]
 pub struct AST {
     pub typ: ASTType,
     pub children: Box<Vec<AST>>,
