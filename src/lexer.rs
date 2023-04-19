@@ -15,29 +15,29 @@ impl Lexer {
         }
     }
 
-    pub fn advance(&mut self) {
+    fn advance(&mut self) {
         if self.i < self.src.len() && self.c != '\0' {
             self.i += 1;
             self.c = self.src.chars().nth(self.i).unwrap();
         }
     }
 
-    pub fn advance_cur(&mut self, val: &str, typ: TokenType) -> Token {
+    fn advance_cur(&mut self, val: &str, typ: TokenType) -> Token {
         self.advance();
         Token::new(val, typ)
     }
 
-    pub fn skip_whitespace(&mut self) {
+    fn skip_whitespace(&mut self) {
         while self.c == ' ' || self.c == '\r' || self.c == '\t' || self.c == '\n' {
             self.advance();
         }
     }
 
-    pub fn peek(&self, offset: i64) -> char {
+    fn peek(&self, offset: i64) -> char {
         return self.src.chars().nth((self.i as i64 + offset) as usize).expect("Index out of range")
     }
 
-    pub fn lex_id(&mut self) -> Token {
+    fn lex_id(&mut self) -> Token {
         let mut value = String::new();
         while self.c.is_alphabetic() || self.c.is_alphanumeric() || self.c == '_' {
             value.push(self.c);
@@ -46,7 +46,7 @@ impl Lexer {
         Token::new(&value, TokenType::ID)
     }
 
-    pub fn lex_int(&mut self) -> Token {
+    fn lex_int(&mut self) -> Token {
         let mut value = String::new();
         while self.c.is_ascii_alphanumeric() {
             value.push(self.c);
@@ -80,15 +80,5 @@ impl Lexer {
             }
         }
         Token::new("NOT_STRINGABLE", TokenType::EOF)
-    }
-
-    pub fn lex(&mut self) {
-        while self.i < self.src.len() {
-            let tok = self.next_tok();
-            match tok.tok_type {
-                TokenType::EOF => return,
-                _ => println!("{}", tok.to_string())
-            }
-        }
     }
 }
