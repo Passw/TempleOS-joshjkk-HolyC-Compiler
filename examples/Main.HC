@@ -1,6 +1,4 @@
-I64 Main()
+U0 Main()
 {
-    return 0;
-}
 
-Main;
+}

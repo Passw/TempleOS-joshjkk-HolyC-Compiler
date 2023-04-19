@@ -26,6 +26,7 @@ impl Parser {
 
     fn parse_id(&mut self) -> AST {
         let value = String::from(self.tok.value.as_mut_str());
+        let mut next_value = String::new();
 
         while self.tok.tok_type == TokenType::ID {
             self.eat(TokenType::ID);
@@ -40,14 +41,14 @@ impl Parser {
             }
 
             if self.tok.tok_type == TokenType::ID {
-                let var_name = String::from(self.tok.value.as_mut_str());
+                next_value = String::from(self.tok.value.as_mut_str());
                 self.eat(TokenType::ID);
 
                 if self.tok.tok_type == TokenType::Equals {
                     self.eat(TokenType::Equals);
 
                     let mut ast = AST::new(ASTType::Assignment);
-                    ast.name = var_name;
+                    ast.name = next_value;
 
                     ast.value = Box::new(Vec::new());
                     ast.value.push(self.parse_expr());
@@ -62,6 +63,16 @@ impl Parser {
 
                 let mut ast = AST::new(ASTType::Call);
                 ast.name = value;
+
+                return ast;
+            }
+            
+            if self.tok.tok_type == TokenType::LParen {
+                let mut ast = AST::new(ASTType::Call);
+                ast.name = next_value;
+
+                ast.value = Box::new(Vec::new());
+                ast.value.push(self.parse_expr());
 
                 return ast;
             }
