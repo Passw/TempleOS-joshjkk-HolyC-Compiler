@@ -1,3 +1,5 @@
+![holyc](https://user-images.githubusercontent.com/97398293/233475753-d2a6a55c-d56d-4519-bf9a-65e6c41fc8ee.svg)
+
 <h1 align="center">HolyC Compiler</h1>
 
 <div align="center">
