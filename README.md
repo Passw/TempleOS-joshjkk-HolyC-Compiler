@@ -11,7 +11,16 @@
    <span> • </span>
         <a href="#contributing">Contributing</a>
   <p></p>
-</div> 
+</div>
+
+<div align="center">
+
+<img src="https://img.shields.io/github/actions/workflow/status/joshjkk/HolyC-Compiler/Build.yml?style=for-the-badge">
+<img src="https://img.shields.io/github/license/joshjkk/HolyC-Compiler?style=for-the-badge">
+<img src="https://img.shields.io/tokei/lines/github/joshjkk/HolyC-Compiler?style=for-the-badge">
+<img src="https://img.shields.io/badge/R.I.P-Terry%20Davis-yellow?style=for-the-badge">
+
+</div>
 
 ## About
 
